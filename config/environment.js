@@ -17,6 +17,14 @@ module.exports = function(environment) {
         Date: false
       }
     },
+    firebase: {
+      apiKey: "AIzaSyAK4nS3ju0AvXwz2njzETvPOomgihXZOSM",
+    authDomain: "cool-class-ec5cb.firebaseapp.com",
+    databaseURL: "https://cool-class-ec5cb.firebaseio.com",
+    projectId: "cool-class-ec5cb",
+    storageBucket: "",
+    messagingSenderId: "160841023588"
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
