@@ -6,7 +6,7 @@ var rentals = [{
   city: "San Francisco",
   type: "Estate",
   bedrooms: 15,
-  image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
+  image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate.jpg"
 }, {
   id: 2,
   owner: "Mike TV",
@@ -25,8 +25,11 @@ var rentals = [{
 
 export default Ember.Route.extend({
   model() {
-     return this.store.findAll('rental');
-   },
+  return Ember.RSVP.hash({
+    rentals: this.store.findAll('rental'),
+    reviews: this.store.findAll('review')
+  });
+},
    actions: {
     saveRental3(params) {
       var newRental = this.store.createRecord('rental', params);
