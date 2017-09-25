@@ -1,20 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  addNewReview: false,
+  addNewRental: false,
   actions: {
-    reviewFormShow() {
-      this.set('addNewReview', true);
+    rentalFormShow() {
+      this.set('addNewRental', true);
     },
-    saveReview() {
-     var params = {
-       author: this.get('author'),
-       rating: this.get('rating'),
-       content: this.get('content'),
-       rental: this.get('rental')
-     };
-     this.set('addNewReview', false);
-     this.sendAction('saveReview', params);
-   }
+
+    saveRental1() {
+      var params = {
+        owner: this.get('owner'),
+        city: this.get('city'),
+        type: this.get('type'),
+        image: this.get('image'),
+        bedrooms: this.get('bedrooms'),
+        cost: parseInt(this.get('cost'))
+      };
+      this.set('addNewRental', false);
+      this.sendAction('saveRental2', params);
+    }
   }
 });

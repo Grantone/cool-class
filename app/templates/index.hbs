@@ -14,6 +14,14 @@ We hope you find exactly what you're looking for in a place to stay.
 
 {{new-rental saveRental2="saveRental3"}}
 
+<h2> Available Rentals </h2>
+
+<ul>
+  {{#each model.rentals as |rental|}}
+    {{rental-popularity rental}} {{rental-tile rental=rental}}
+  {{/each}}
+</ul>
+
 <h2> All Reviews </h2>
 
 <ul>
@@ -21,8 +29,6 @@ We hope you find exactly what you're looking for in a place to stay.
     <li>{{review.rating}} - {{review.content}} - by {{review.author}}</li>
   {{/each}}
 </ul>
-
-{{new-review}}
 
 <hr>
 
